@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NotesProvider } from "@/context/NotesContext";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "NoteEase",
+  description: "A modern, fast, and simple notes app",
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        {children}
+        <NotesProvider>{children}</NotesProvider>
       </body>
     </html>
   );
